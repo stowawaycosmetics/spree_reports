@@ -27,7 +27,9 @@ Gemfile
 
 ## Configuration
 
-initializers/spree_reports.rb
+The defaults are usually fine, but you can override them in an initializer. At least have a look at the country specific settings like `time_zone` and `week_start`.
+
+`initializers/spree_reports.rb`
 
     # reports to show
     SpreeReports.reports = [
@@ -51,7 +53,7 @@ initializers/spree_reports.rb
     # default months for reports
     SpreeReports.default_months = 3
     
-    # default api user role to check
+    # default API user role to check, when accessing reports via API
     SpreeReports.api_user_role = "admin"
     
     # default date formats
@@ -80,6 +82,5 @@ To get data via the API, just copy the Permalink URL displayed at the bottom of 
 
 ## Requirements
 
-- spree_core 2.4.0
+- spree_core 2.3
 - ruby 2
-- rails 4
