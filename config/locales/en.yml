@@ -1,0 +1,8 @@
+en:
+  spree:
+    orders_by_period: "Orders per period"
+    orders_by_period_description: "Orders for a specific time range per period"
+    
+    spree_reports:
+      test: "TEST"
+      
