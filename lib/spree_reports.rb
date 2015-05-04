@@ -1,5 +1,7 @@
 require 'spree_core'
 require "spree_reports/engine"
+require "chartkick"
+require "groupdate"
 
 module SpreeReports
   

@@ -82,5 +82,8 @@ To get data via the API, just copy the Permalink URL displayed at the bottom of 
 
 ## Requirements
 
-- spree_core 2.3
+- spree_core 2.2
 - ruby 2
+
+**Note about spree 2.2**
+_spree\_reports_ depends on the Spree::Store model which is new in 2.3. If you use spree 2.2, have a look at the [multi-domain gem](https://github.com/spree-contrib/spree-multi-domain/tree/2-2-stable) to make it work.
