@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spree_reports (0.1.2)
+    spree_reports (0.1.3)
       chartkick (~> 1.3)
       groupdate (~> 2.4)
       spree_core (~> 2.2)
