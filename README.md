@@ -66,6 +66,11 @@ The defaults are usually fine, but you can override them in an initializer. At l
     
     # e.g. override the day date_format
     SpreeReports.date_formats[:day] = "%d.%m.%y"
+    
+    # define user roles or users to exclude these users from reports
+    SpreeReports.excluded_roles = %w{admin}
+    SpreeReports.excluded_users = %w{name1@domain.com name2@domain.com}
+    
 
 
 ### API

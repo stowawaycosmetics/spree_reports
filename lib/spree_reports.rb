@@ -28,6 +28,12 @@ module SpreeReports
   
   # date formats for different group_by settings
   mattr_accessor :date_formats
+  
+  # these user roles are exluded from all reports
+  mattr_accessor :excluded_roles
+  
+  # these user accounts are exluded from all reports
+  mattr_accessor :excluded_users
    
 end
 
@@ -52,3 +58,5 @@ SpreeReports.date_formats = {
   week: "%W/%Y",
   day: "%m.%d.%y"
 }
+SpreeReports.excluded_roles = %w{admin}
+SpreeReports.excluded_users = []

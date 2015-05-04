@@ -1,6 +1,6 @@
 module SpreeReports
   module Reports
-    class OrdersByPeriod
+    class OrdersByPeriod < SpreeReports::Reports::Base
       
       attr_accessor :params, :data
       attr_accessor :currencies, :currency, :stores, :store, :group_by_list, :group_by, :states, :state, :months, :date_start
@@ -71,6 +71,11 @@ module SpreeReports
         @sales = @sales.where("#{date_column.to_s} >= ?", @date_start) if @date_start
         @sales = @sales.where(currency: @currency) if @currencies.size > 1
         @sales = @sales.where(store_id: @store) if @stores.size > 2 && @store != "all"
+        
+        if excluded_user_ids.any?
+          excluded_sales = Spree::Order.where(user_id: excluded_user_ids).pluck(:id)
+          @sales = @sales.where.not(id: excluded_sales) if excluded_sales.any?  
+        end
         
         # group by
 
