@@ -40,11 +40,9 @@ end
 # default configuration, overrideable in config/initializer spree_reports.rb
 
 SpreeReports.reports = [
-  :orders_by_period
+  :orders_by_period,
+  :sold_products
 ]
-
-# :orders_by_payment_type
-# :orders_by_value_range
 
 SpreeReports.time_zone = "Pacific Time (US & Canada)"
 SpreeReports.week_start = :mon

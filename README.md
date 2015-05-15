@@ -22,8 +22,7 @@ Gemfile
 ## Report List
 
 - Orders per Period
-- Orders per Payment Type (TODO)
-- Orders per Value Range (TODO)
+- Sold Products
 
 ## Configuration
 
@@ -34,8 +33,7 @@ The defaults are usually fine, but you can override them in an initializer. At l
     # reports to show
     SpreeReports.reports = [
       :orders_by_period,
-      :orders_by_payment_type,
-      :orders_by_value_range
+      :sold_products
     ]
     
     # Time Zone: see http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html

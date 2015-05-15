@@ -70,12 +70,8 @@ module SpreeReports
     
         @sales = @sales.where("#{date_column.to_s} >= ?", @date_start) if @date_start
         @sales = @sales.where(currency: @currency) if @currencies.size > 1
-        @sales = @sales.where(store_id: @store) if @stores.size > 2 && @store != "all"
-        
-        if excluded_user_ids.any?
-          excluded_sales = Spree::Order.where(user_id: excluded_user_ids).pluck(:id)
-          @sales = @sales.where.not(id: excluded_sales) if excluded_sales.any?  
-        end
+        @sales = @sales.where(store_id: @store) if @stores.size > 2 && @store != "all"        
+        @sales = without_excluded_orders(@sales)
         
         # group by
 
@@ -118,7 +114,6 @@ module SpreeReports
             items_per_order: SpreeReports::Helper.round(SpreeReports::Helper.divide(@sales_item_count_total[k].to_f, v.to_f))
           }
         end
-        
       end
       
       def to_csv
