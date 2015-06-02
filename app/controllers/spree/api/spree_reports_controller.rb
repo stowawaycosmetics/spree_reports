@@ -9,7 +9,7 @@ module Spree
       end
 
       def orders_with_products_by_period
-        @report = SpreeReports::Reports::OrdersByPeriod.new(params)
+        @report = SpreeReports::Reports::OrdersWithProductsByPeriod.new(params)
         render json: @report.data
       end
 
