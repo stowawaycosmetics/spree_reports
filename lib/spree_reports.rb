@@ -4,43 +4,44 @@ require "chartkick"
 require "groupdate"
 
 module SpreeReports
-  
+
   # list of visible reports
   mattr_accessor :reports
-  
+
   # time zone
   mattr_accessor :time_zone
-  
+
   # start of week
   mattr_accessor :week_start
-  
+
   # export
   mattr_accessor :csv_export
-  
+
   # available months to select in reports
   mattr_accessor :report_months
-  
+
   # default months selection in reports
   mattr_accessor :default_months
-  
+
   # check if the api user has this role
   mattr_accessor :api_user_role
-  
+
   # date formats for different group_by settings
   mattr_accessor :date_formats
-  
+
   # these user roles are exluded from all reports
   mattr_accessor :excluded_roles
-  
+
   # these user accounts are exluded from all reports
   mattr_accessor :excluded_users
-   
+
 end
 
 # default configuration, overrideable in config/initializer spree_reports.rb
 
 SpreeReports.reports = [
   :orders_by_period,
+  :orders_with_products_by_period,
   :sold_products
 ]
 
