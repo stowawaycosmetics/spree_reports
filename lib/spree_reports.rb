@@ -41,6 +41,7 @@ end
 
 SpreeReports.reports = [
   :orders_by_period,
+  :user_accounts,
   :orders_with_products_by_period,
   :sold_products
 ]

@@ -8,6 +8,12 @@ module Spree
         render json: @report.data
       end
 
+      def user_accounts
+        @report = SpreeReports::Reports::UserAccounts.new(params)
+        render json: @report.data
+      end
+
+
       def orders_with_products_by_period
         @report = SpreeReports::Reports::OrdersWithProductsByPeriod.new(params)
         render json: @report.data

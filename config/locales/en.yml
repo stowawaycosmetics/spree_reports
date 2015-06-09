@@ -2,6 +2,8 @@ en:
   spree:
     orders_by_period: "Orders per period"
     orders_by_period_description: "Orders for a specific time range per period"
+    user_accounts: "All the users"
+    user_accounts: "All the users"
     orders_with_products_by_period: "Orders with products per period"
     orders_with_products_by_period_description: "Orders and products for a specific time range per period"
     sold_products: "Sold products"
