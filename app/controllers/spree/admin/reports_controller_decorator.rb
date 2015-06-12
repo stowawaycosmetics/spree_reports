@@ -23,6 +23,17 @@ Spree::Admin::ReportsController.class_eval do
     end
   end
 
+  def sales_tax_by_month
+    @report = SpreeReports::Reports::SalesTaxByMonth.new(params)
+    respond_to do |format|
+      format.html
+      format.csv {
+        return head :unauthorized unless SpreeReports.csv_export
+        send_data @report.to_csv, filename: @report.csv_filename, type: "text/csv"
+      }
+    end
+  end
+
   def user_accounts
     @report = SpreeReports::Reports::UserAccounts.new(params)
     respond_to do |format|

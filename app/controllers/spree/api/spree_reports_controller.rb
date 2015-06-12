@@ -13,6 +13,10 @@ module Spree
         render json: @report.data
       end
 
+      def sales_tax_by_month
+        @report = SpreeReports::Reports::SalesTaxByMonth.new(params)
+        render json: @report.data
+      end
 
       def orders_with_products_by_period
         @report = SpreeReports::Reports::OrdersWithProductsByPeriod.new(params)

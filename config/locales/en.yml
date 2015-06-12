@@ -5,9 +5,11 @@ en:
     user_accounts: "All the users"
     user_accounts: "All the users"
     orders_with_products_by_period: "Orders with products per period"
-    orders_with_products_by_period_description: "Orders and products for a specific time range per period"
+    orders_with_products_by_period_description: "&start=2015-4-1&end=2015-5-1"
     sold_products: "Sold products"
     sold_products_description: "Quantity of sold products for a specific time range"
+    sales_tax_by_month: "Orders and sales tax for a range of time"
+    sales_tax_by_month_description: "&start=2015-4-1&end=2015-5-1"
 
     spree_reports:
       test: "TEST"
