@@ -92,7 +92,7 @@ module SpreeReports
         @sales_adjustment_total = @sales.sum(:adjustment_total)
         @sales_shipment_total = @sales.sum(:shipment_total)
         @sales_promo_total = @sales.sum(:promo_total)
-        @sales_included_tax_total = @sales.sum(:included_tax_total)
+        @sales_included_tax_total = @sales.sum(:additional_tax_total)
         @sales_item_count_total = @sales.sum(:item_count)
         
       end
