@@ -17,15 +17,16 @@ module SpreeReports
       end
 
       def get_data
-        @data_tmp = @users.map { |user| [user.email, user.has_ordered, user.created_at.to_date.to_s]}
+        @data_tmp = @users.map { |user| [user.email, user.orders.complete.size, user.clv, user.created_at.to_date.to_s]}
       end
 
       def build_response
         @data = @data_tmp.map do |item|
           {
             email: item[0],
-            has_ordered: item[1],
-            created: item[2]
+            orders: item[1],
+            clv: item[2],
+            created: item[3]
           }
         end
       end
