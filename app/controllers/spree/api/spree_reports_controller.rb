@@ -1,7 +1,9 @@
 module Spree
   module Api
     class SpreeReportsController < Spree::Api::BaseController
-      before_filter :requires_admin
+      if ENV['RAILS_ENV'] != 'development'
+        before_filter :requires_admin
+      end
 
       def orders_by_period
         @report = SpreeReports::Reports::OrdersByPeriod.new(params)
