@@ -18,7 +18,7 @@ module SpreeReports
       end
 
       def get_data
-        @orders = Spree::Order.includes(:ship_address).where("created_at > ?", @date_start).where("created_at < ?", @date_end).where("additional_tax_total > 0")
+        @orders = Spree::Order.complete.includes(:ship_address).where("created_at > ?", @date_start).where("created_at < ?", @date_end).where("additional_tax_total > 0")
         @data_tmp = @orders.map { |order| [order.created_at.to_date, order.number, order.ship_address.state.name, order.ship_address.zipcode, order.total, order.additional_tax_total.to_s.to_f]}
       end
 
